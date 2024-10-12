@@ -1,0 +1,17 @@
+{
+	"id":10,
+	"firstName":"Sachin",
+	"lastName":"Tendulkar",
+	"active":true,
+	"address":{
+	            "street":"mumbai",
+	            "state":"maharastra",
+	            "zip":781,
+	            "country":"india"
+               },
+    "language":["java","c","python","angular"],
+    "data":"useless"
+    
+               
+    
+}
