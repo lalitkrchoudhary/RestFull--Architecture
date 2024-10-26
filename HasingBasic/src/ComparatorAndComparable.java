@@ -84,6 +84,7 @@ public class ComparatorAndComparable {
 		//Collections.sort(std,com); // for using comparator we have to use two parameter 
 		
 		Collections.sort(std); //now student own have the compare power so we donts have to pass two parameter
+		
 
 		for(Student e : std)
 		{

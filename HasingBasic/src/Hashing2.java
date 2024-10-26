@@ -11,7 +11,7 @@ class Hashing2{
 			set.add(e);
 		}
 		
-		 
+		 System.out.println(set);
 		return set.size();
 	}
 	

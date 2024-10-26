@@ -13,8 +13,11 @@ public class Armstrong {
 		
 		while(n>0) {
 			r=n%10;
+			System.out.println("this is r : "+r);
 			n=n/10;
+			System.out.println("this is n : "+n);
 			sum = sum + r*r*r;
+			System.out.println("this is sum : "+sum);
 		}
 		if(temp ==sum) 
 			System.out.println("The number is armstrong");
