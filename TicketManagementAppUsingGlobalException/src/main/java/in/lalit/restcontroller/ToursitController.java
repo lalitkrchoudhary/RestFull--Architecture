@@ -26,44 +26,35 @@ public class ToursitController {
 	
 	@PostMapping("/register")
 	public ResponseEntity<String> enrollTourist(@RequestBody Tourist tourist){
-		try {
+		
 			
 		String resultMsg =service.registerToursit(tourist);
 		return new ResponseEntity<String>(resultMsg, HttpStatus.OK);
 			
-		} catch (Exception e) {
-
-			return new ResponseEntity<String>("Problem in tourist enrollement",HttpStatus.INTERNAL_SERVER_ERROR); //Error 500
-		}
+		
 		
 	}
 	
 	
 	@GetMapping("/findAll")
 	public ResponseEntity<?> findAll(){
-		try {
+		
 			
 		List<Tourist> list  =service.fetchAllTourist();
 		return new ResponseEntity<List<Tourist>>(list, HttpStatus.OK);
 			
-		} catch (Exception e) {
-
-			return new ResponseEntity<String>("Problem in tourist fetching",HttpStatus.INTERNAL_SERVER_ERROR); //Error 500
-		}
+		
 		
 	}
 	
 	@GetMapping("/find/{id}")
 	public ResponseEntity<?> findById(@PathVariable Integer id){
 		
-		try {
+		
 			Tourist tourist= service.fetchById(id);
 			return new ResponseEntity<Tourist>(tourist, HttpStatus.OK);
 				
-			} catch (Exception e) {
-
-				return new ResponseEntity<String>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR); //Error 500
-			}
+			
 			
 	}
 	
@@ -71,12 +62,9 @@ public class ToursitController {
 	@PutMapping("/modify")
 	public ResponseEntity<String> updateTourist(@RequestBody Tourist tourist){
 		System.out.println(tourist);
-		try {
+		
 		String msg=	service.updateTouristByDetails(tourist);
 		return  new ResponseEntity<String>(msg, HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<String>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
-		}
 		
 	}
 
