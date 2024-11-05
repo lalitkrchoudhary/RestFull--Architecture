@@ -1,6 +1,5 @@
 package in.lalit.restcontroller;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import in.lalit.model.Tourist;
 import in.lalit.service.ITouristMangService;
 
+
 @RestController
 @RequestMapping("/api/tourist")
 public class ToursitController {
@@ -26,6 +26,7 @@ public class ToursitController {
 	private ITouristMangService service;
 	
 	@PostMapping("/register")
+	//@ApiOperation("For Tourist Registration") // this will show the method name while using swagger 
 	public ResponseEntity<String> enrollTourist(@RequestBody Tourist tourist){
 		
 			
@@ -66,23 +67,6 @@ public class ToursitController {
 		
 		String msg=	service.updateTouristByDetails(tourist);
 		return  new ResponseEntity<String>(msg, HttpStatus.OK);
-		
-	}
-	
-	@GetMapping("/wish")
-	public ResponseEntity<String> displayMessage(){
-		LocalDateTime ldt = LocalDateTime.now();
-		int hours=ldt.getHour();
-		String body =null;
-		if(hours>12)
-			body = "good morning";
-		else if(hours>16)
-			body ="good evening";
-		else
-			body ="good night";
-			
-		
-		return new ResponseEntity<String>(body,HttpStatus.OK);
 		
 	}
 
